@@ -50,7 +50,7 @@ void serialInterface::readHandler(const boost::system::error_code& error,
 		size_t bytes_transferred)
 {
 
-	if ((bytes_transferred > 0) && (error == 0))
+	if ((bytes_transferred > 0) && (error == boost::system::errc::success))
 	{
 
 		istream is(&readbuffer);
