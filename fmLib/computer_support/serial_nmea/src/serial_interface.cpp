@@ -49,7 +49,7 @@ serial_interface::serial_interface(ros::Publisher& rx_publisher) : serial_(io_)
 
 void serial_interface::readHandler(const boost::system::error_code& error, size_t bytes_transferred)
 {
-	if ((bytes_transferred > 0) && (error == 0)){
+	if ((bytes_transferred > 0) && (error == boost::system::errc::success)){
 
 		istream is(&readbuffer);
 
